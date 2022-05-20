@@ -13,6 +13,6 @@ FeedbackOptions.defaultProps = {
     onLeaveFeedback: () => { }
 }
 FeedbackOptions.propTypes = {
-    onLeaveFeedback: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.string)
+    onLeaveFeedback: PropTypes.func.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string).isRequired
 }
