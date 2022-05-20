@@ -1,18 +1,18 @@
 import styles from "./style.module.css"
 import PropTypes from 'prop-types';
-export default function FeedbackOptions({ data, onLeaveFeedback }) {
+export default function FeedbackOptions({ options, onLeaveFeedback }) {
     return (
         <div className={styles['button-wraper']}>
-            <button className={styles.button} name="good" onClick={onLeaveFeedback} >{data[0]}</button>
-            <button className={styles.button} name="neutral" onClick={onLeaveFeedback}>{data[1]}</button>
-            <button className={styles.button} name="bad" onClick={onLeaveFeedback}>{data[2]}</button>
+            {options.map((option, index) => (
+                <button key={index} className={styles.button} onClick={() => onLeaveFeedback(option)} >{option}</button>
+            ))}
         </div>)
 }
 FeedbackOptions.defaultProps = {
-    data: {},
+    options: {},
     onLeaveFeedback: () => { }
 }
 FeedbackOptions.propTypes = {
     onLeaveFeedback: PropTypes.func,
-    data: PropTypes.arrayOf(PropTypes.string)
+    options: PropTypes.arrayOf(PropTypes.string)
 }

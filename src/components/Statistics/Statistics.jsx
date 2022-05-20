@@ -1,23 +1,22 @@
 import styles from "./style.module.css"
 import PropTypes from 'prop-types';
-export default function Statistics({ data }) {
-    const total = data.good + data.bad + data.neutral
-    const percentage = data.good / total * 100
+export default function Statistics({ good, neutral, bad, total, positivePercentage }) {
     return (<ul className={styles.statistics}>
-        <li>Good:{data.good}</li>
-        <li>Neutral:{data.neutral}</li>
-        <li>Bad:{data.bad}</li>
+        <li>Good:{good}</li>
+        <li>Neutral:{neutral}</li>
+        <li>Bad:{bad}</li>
         <li>Total:{total}</li>
-        <li>Positive feedback: {percentage.toFixed(2)}%</li>
+        <li>Positive feedback: {positivePercentage.toFixed(2)}%</li>
     </ul>)
 }
 Statistics.defaultProps = {
     data: {}
 }
 Statistics.propTypes = {
-    data: PropTypes.shape({
-        good: PropTypes.number.isRequired,
-        neutral: PropTypes.number.isRequired,
-        bad: PropTypes.number.isRequired
-    })
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+    total: PropTypes.number,
+    positivePercentage: PropTypes.number
+
 }
