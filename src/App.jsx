@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Section from "components/Section/Section";
 import Statistics from "components/Statistics/Statistics";
-import FeedbackOptions from "components/FeedbackOptions";
+import FeedbackOptions from "components/FeedbackOptions/FeedbackOptions";
 import Notification from "components/Notification/Notification";
 const options = ['good', 'neutral', 'bad']
 export class App extends Component {
