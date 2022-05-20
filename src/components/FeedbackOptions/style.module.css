@@ -9,3 +9,7 @@
 .button:not(:last-child) {
     border-right: 1px solid #EEE;
 }
+
+.button-wraper {
+    margin-top: 90px;
+}
