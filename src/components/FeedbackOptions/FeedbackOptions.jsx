@@ -9,7 +9,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
         </div>)
 }
 FeedbackOptions.defaultProps = {
-    options: {},
+    options: [],
     onLeaveFeedback: () => { }
 }
 FeedbackOptions.propTypes = {
